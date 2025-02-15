@@ -41,4 +41,4 @@
 Меняем username на bad_user
 
 Ответ от сервера
-![GET_Response_unsuccessfully](./screenshots/GET_Response_unsuccessfully.JPG)
+![GET_Response_unsuccessfully](./screenshots/Response_unsuccessfully.JPG)
