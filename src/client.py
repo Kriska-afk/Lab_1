@@ -58,7 +58,7 @@ def make_request(method, endpoint, data=None):
         if cached_data:
             print("Используем кэшированные данные.")
             print(f"Response Code: 200")
-            print(f"Response Body: {cached_data}")
+            print(f"Response Body: {cached_data[0]}")
             return
 
         response = requests.get(url, auth=HTTPBasicAuth(USERNAME, PASSWORD))
