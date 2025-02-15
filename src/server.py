@@ -11,6 +11,8 @@ config.read("config.ini")
 HOST = config["Client-server_app"]["host"]
 PORT = int(config["Client-server_app"]["port"])
 MAX_AGE = config["Client-server_app"]["max-age"]
+USERNAME = config["Client-server_app"]["username"]
+PASSWORD = config["Client-server_app"]["password"]
 
 
 class MyRequestHandler(http.server.SimpleHTTPRequestHandler):
@@ -78,7 +80,7 @@ class MyRequestHandler(http.server.SimpleHTTPRequestHandler):
         decoded_credentials = base64.b64decode(credentials).decode()
         username, password = decoded_credentials.split(':', 1)
 
-        return username == 'user' and password == 'password'
+        return username == USERNAME and password == 'password'
 
 
 with socketserver.TCPServer((HOST, PORT), MyRequestHandler) as httpd:
